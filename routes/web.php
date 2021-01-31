@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\RequestResponceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,4 @@ end list2-5 */
 Route::get('hello', [HelloController::class, 'index']);           // list2-12
 Route::get('hello/other', [HelloController::class, 'other']);     // list2-12
 Route::get('singleaction', SingleActionController::class);     // list2-13
+Route::get('request', [RequestResponceController::class, 'index']);           // list2-12
