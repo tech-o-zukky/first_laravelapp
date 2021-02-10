@@ -52,7 +52,15 @@ end list2-5 */
 
 // Route::get('hello', [HelloController::class, 'index']);
 // Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
-Route::get('hello', [HelloController::class, 'index']);           // list2-12
+
+// list2-12
+// Route::get('hello', [HelloController::class, 'index']);  // ->delete 3-2
+// Route::get('hello', function() {
+//     return view('hello.index');
+// });     // ->delete 3-2
+// end 
+
+Route::get('hello', 'App\Http\Controllers\HelloController@index');   // add3-4, 3-9
 Route::get('hello/other', [HelloController::class, 'other']);     // list2-12
 Route::get('singleaction', SingleActionController::class);     // list2-13
 Route::get('request', [RequestResponceController::class, 'index']);           // list2-12

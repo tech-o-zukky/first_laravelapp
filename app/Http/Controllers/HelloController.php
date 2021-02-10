@@ -28,15 +28,22 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     // add start list2-11
-    public function index() {
-        global $head, $style, $body, $end;
+    public function index(Request $request) {
+        // mod start 3-3
+        // global $head, $style, $body, $end;
 
-        $html = $head.tag('title', 'Hello/Index').$style.$body
-                .tag('h1','Index').tag('p', 'this is Index page')
-                .'<a href="/hello/other">go to Other page</a>'
-                .$end;
+        // $html = $head.tag('title', 'Hello/Index').$style.$body
+        //         .tag('h1','Index').tag('p', 'this is Index page')
+        //         .'<a href="/hello/other">go to Other page</a>'
+        //         .$end;
 
-        return $html;
+        // return $html;
+
+        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
+                 'id'=>$request->id
+                ];
+        return view('hello.index', $data);
+        // mod end 3-3
     }
 
     public function other() {
