@@ -27,23 +27,18 @@ function tag($tag, $txt) {
 
 class HelloController extends Controller
 {
-    // add start list2-11
-    public function index(Request $request) {
-        // mod start 3-3
-        // global $head, $style, $body, $end;
-
-        // $html = $head.tag('title', 'Hello/Index').$style.$body
-        //         .tag('h1','Index').tag('p', 'this is Index page')
-        //         .'<a href="/hello/other">go to Other page</a>'
-        //         .$end;
-
-        // return $html;
-
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
-                 'id'=>$request->id
-                ];
+    public function index() {
+        $data = ['msg'=>'お名前を入力してください。'
+        ];
         return view('hello.index', $data);
-        // mod end 3-3
+    }
+
+    // 3-15
+    public function post(Request $request) {
+        $msg = $request->msg;
+        $data = ['msg'=>'こんにちは、' . $msg .'さん！'
+        ];
+        return view('hello.index', $data);
     }
 
     public function other() {
@@ -55,32 +50,4 @@ class HelloController extends Controller
 
         return $html;
     }
-    // add end 
-
-/* del start list2-11
-    public function index($id='noname', $pass='unknown') {
-        return <<<EOF
-<html>
-<head>
-<title>Hello/Index</title>
-<style>
-    body {font-size: 16pt; color: #999; }
-    h1 {font-size: 100pt; text-align: right; color: #eee; 
-        margin: -40px 0px -50px 0px; }
-</style>
-</head>
-<body>
-
-<h1>Index</h1>
-<p>これは、Helloコントローラのindexアクションです。</p>
-<ul>
-    <li>ID: {$id}</li>
-    <li>PASS: {$pass}</li>
-</ul>
-
-</body>
-</html>
-EOF;
-    }
-*/
 }
