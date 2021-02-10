@@ -28,7 +28,8 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     public function index() {
-        return view('hello.index', ['msg'=>'']);
+        // return view('hello.index', ['msg'=>'']);
+        return view('hello.index');     //3-20
     }
 
     // 3-15
