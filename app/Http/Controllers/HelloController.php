@@ -28,8 +28,8 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     public function index() {
-        // return view('hello.index', ['msg'=>'']);
-        return view('hello.index');     //3-20
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.index', ['data'=>$data]);     //3-22
     }
 
     // 3-15

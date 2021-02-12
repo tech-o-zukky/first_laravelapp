@@ -21,6 +21,13 @@
       <input type="text" name="msg">
       <input type="submit">
     </form>
+
+    <p>&#064;foreachディレクティブの例</p>
+    <ol>
+      @foreach($data as $item)
+      <li>{{$item}}
+        @endforeach
+    </ol>
 </body>
 
 </html>
