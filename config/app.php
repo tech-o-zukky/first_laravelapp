@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // add list3-36
-        App\Providers\HelloServiceProvider::Class,
+        App\Providers\HelloServiceProvider::class,
 
     ],
 
