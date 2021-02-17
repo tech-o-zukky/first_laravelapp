@@ -21,6 +21,9 @@
   @endslot
 
 @endcomponent
+
+@include('components.message', ['msg_title'=>'OK', 'msg_content'=>'サブビューです。'])
+
 @endsection
 
 @section('footer')
