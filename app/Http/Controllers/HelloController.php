@@ -35,7 +35,7 @@ class HelloController extends Controller
                             ['name' => '佐藤さぶろう', 'mail' => 'saburo@sato']
                         ];
 
-        return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest]);     //3-22, 3-33
+        return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest, 'message'=>'Hello!']);     //3-22, 3-33
     }
 
     // 3-15

@@ -28,6 +28,9 @@
   @each('components.item', $data_eachtest, 'item')
 </ul>
 
+<p>Controller value<br>'message' = {{$message}}</p>
+<p>View value<br>'view_mesasge' = {{$view_message}}</p>
+
 @endsection
 
 @section('footer')
