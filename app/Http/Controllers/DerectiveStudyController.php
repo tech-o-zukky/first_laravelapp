@@ -25,22 +25,16 @@ function tag($tag, $txt) {
 }
 // end list2-11
 
-class HelloController extends Controller
+class DerectiveStudyController extends Controller
 {
-    public function index() {
+        public function index() {
         $data = ['one', 'two', 'three', 'four', 'five'];
-        $data_eachtest = [
-                            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
-                            ['name' => '田中はなこ', 'mail' => 'hanako@tanaka'],
-                            ['name' => '佐藤さぶろう', 'mail' => 'saburo@sato']
-                        ];
-
-        return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest, 'message'=>'Hello!']);     //3-22, 3-33
+        return view('hello.derective', ['data'=>$data]);     //3-22
     }
 
     // 3-15
     public function post(Request $request) {
-        return view('hello.index', ['msg'=>$request->msg]);
+        return view('hello.derective', ['msg'=>$request->msg]);
     }
 
     public function other() {
