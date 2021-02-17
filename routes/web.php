@@ -25,3 +25,4 @@ Route::get('hello/other', [HelloController::class, 'other']);     // list2-12
 Route::get('singleaction', SingleActionController::class);     // list2-13
 Route::get('request', [RequestResponceController::class, 'index']);           // list2-12
 Route::post('hello', 'App\Http\Controllers\HelloController@post');   // add3-16
+Route::get('derective', 'App\Http\Controllers\DerectiveStudyController@index');    //ディレクティブ学習ページ切り出し
