@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>@yield</title>
+  <title>@yield('title')</title>
   <style>
     body {font-size:16pt; color:#999; margin: 5px;}
     h1 {font-size:50pt; text-align:right; color:#f6f6f6;
