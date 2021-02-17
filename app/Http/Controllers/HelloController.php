@@ -29,7 +29,13 @@ class HelloController extends Controller
 {
     public function index() {
         $data = ['one', 'two', 'three', 'four', 'five'];
-        return view('hello.index', ['data'=>$data]);     //3-22
+        $data_eachtest = [
+                            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
+                            ['name' => '田中はなこ', 'mail' => 'hanako@tanaka'],
+                            ['name' => '佐藤さぶろう', 'mail' => 'saburo@sato']
+                        ];
+
+        return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest]);     //3-22, 3-33
     }
 
     // 3-15

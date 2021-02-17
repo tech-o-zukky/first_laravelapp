@@ -24,6 +24,10 @@
 
 @include('components.message', ['msg_title'=>'OK', 'msg_content'=>'サブビューです。'])
 
+<ul>
+  @each('components.item', $data_eachtest, 'item')
+</ul>
+
 @endsection
 
 @section('footer')
