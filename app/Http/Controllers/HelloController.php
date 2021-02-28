@@ -86,7 +86,7 @@ class HelloController extends Controller
     }
 
     // 5-12 DBupdate
-    public function add(Request $request) {
+    public function edit(Request $request) {
         $param = ['id' => $request->id];
         $item = DB::select('select * from people where id = :id', $param);
         return view('hello.edit', ['form' => $item[0]]);
