@@ -29,8 +29,8 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     public function index(Request $request) {
-        // 5-17 クエリビルダに書き換え
-        $items = DB::table('people')->get();
+        // 5-17 クエリビルダに書き換え, 5-25 orderBy追加
+        $items = DB::table('people')->orderBy('age','asc')->get();
 
         // 5-7
         // if (isset($request->id)) {
