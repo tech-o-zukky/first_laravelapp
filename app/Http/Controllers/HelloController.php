@@ -83,8 +83,11 @@ class HelloController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::insert('insert into people (name, mail, age) values 
-                    (:name, :mail, :age)', $param);
+        // 5-27
+        DB::table('people')->insert($param);
+        
+        // DB::insert('insert into people (name, mail, age) values 
+        //             (:name, :mail, :age)', $param);
         return redirect('/hello');
     }
 
