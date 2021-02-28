@@ -139,11 +139,21 @@ class HelloController extends Controller
     // } 
 
     // 5-24 クエリビルダ(WhereRaw)
+    // public function show(Request $request) {
+    //     $min = $request->min;
+    //     $max = $request->max;
+    //     $items = DB::table('people')
+    //         ->WhereRaw('age >= ? and age <= ?', [$min, $max])
+    //         ->get();
+    //     return view('hello/show', ['items'=> $items]);
+    // }
+
+    // 5-26 クエリビルダ(offset, limit)
     public function show(Request $request) {
-        $min = $request->min;
-        $max = $request->max;
+        $page = $request->page;
         $items = DB::table('people')
-            ->WhereRaw('age >= ? and age <= ?', [$min, $max])
+            ->offset($page * 2)
+            ->limit(2)
             ->get();
         return view('hello/show', ['items'=> $items]);
     }
