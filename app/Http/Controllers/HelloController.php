@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 // start list2-11
 global $head, $style, $body, $end;
@@ -27,15 +28,23 @@ function tag($tag, $txt) {
 
 class HelloController extends Controller
 {
-    public function index() {
-        $data = ['one', 'two', 'three', 'four', 'five'];
-        $data_eachtest = [
-                            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
-                            ['name' => '田中はなこ', 'mail' => 'hanako@tanaka'],
-                            ['name' => '佐藤さぶろう', 'mail' => 'saburo@sato']
-                        ];
+    public function index(Request $request) {
 
-        return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest, 'message'=>'Hello!']);     //3-22, 3-33
+        // 5-4 start
+        $items = DB::select('select * from people');
+        return view('hello.index',['items' => $items]);
+
+
+        // // delete
+        // $data = ['one', 'two', 'three', 'four', 'five'];
+        // $data_eachtest = [
+        //                     ['name' => '山田たろう', 'mail' => 'taro@yamada'],
+        //                     ['name' => '田中はなこ', 'mail' => 'hanako@tanaka'],
+        //                     ['name' => '佐藤さぶろう', 'mail' => 'saburo@sato']
+        //                 ];
+
+        // return view('hello.index', ['data'=>$data, 'data_eachtest'=> $data_eachtest, 'message'=>'Hello!']);     //3-22, 3-33
+        // 5-4 end
     }
 
     // 3-15
