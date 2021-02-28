@@ -129,12 +129,22 @@ class HelloController extends Controller
     // } 
 
     // 5-23 クエリビルダ(where, orWhere)
+    // public function show(Request $request) {
+    //     $name = $request->name;
+    //     $items = DB::table('people')
+    //         ->where('name', 'like', '%' . $name . '%')
+    //         ->orWhere('mail', 'like', '%' . $name . '%')
+    //         ->get();
+    //     return view('hello/show', ['items'=> $items]);
+    // } 
+
+    // 5-24 クエリビルダ(WhereRaw)
     public function show(Request $request) {
-        $name = $request->name;
+        $min = $request->min;
+        $max = $request->max;
         $items = DB::table('people')
-            ->where('name', 'like', '%' . $name . '%')
-            ->orWhere('mail', 'like', '%' . $name . '%')
+            ->WhereRaw('age >= ? and age <= ?', [$min, $max])
             ->get();
         return view('hello/show', ['items'=> $items]);
-    } 
+    }
 }
