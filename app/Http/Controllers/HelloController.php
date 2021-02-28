@@ -29,13 +29,16 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     public function index(Request $request) {
+        // 5-17 クエリビルダに書き換え
+        $items = DB::table('people')->get();
+
         // 5-7
-        if (isset($request->id)) {
-            $param = ['id' => $request -> id];
-            $items = DB::select('select * from people where id = :id', $param);
-        } else {
-            $items = DB::select('select * from people');
-        }
+        // if (isset($request->id)) {
+        //     $param = ['id' => $request -> id];
+        //     $items = DB::select('select * from people where id = :id', $param);
+        // } else {
+        //     $items = DB::select('select * from people');
+        // }
 
         // 5-4 start
         // $items = DB::select('select * from people');
