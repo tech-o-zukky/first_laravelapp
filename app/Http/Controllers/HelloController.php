@@ -91,24 +91,44 @@ class HelloController extends Controller
         return redirect('/hello');
     }
 
-    // 5-12 DBupdate
+    // 5-28 クエリビルダに書き換え(edit, update)
     public function edit(Request $request) {
-        $param = ['id' => $request->id];
-        $item = DB::select('select * from people where id = :id', $param);
-        return view('hello.edit', ['form' => $item[0]]);
+        $item = DB::table('people')
+        ->where('id', $request ->id)->first();
+        return view('hello.edit', ['form' => $item]);
     }
 
-    // 5-12 DBupdate
     public function update(Request $request) {
         $param = [
-            'id' => $request->id,
             'name' => $request->name,
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::update('update people set name =:name, mail =:mail, age =:age where id =:id', $param);
+        
+        DB::table('people')
+        ->where('id', $request ->id)
+        ->update($param);
         return redirect('/hello');
     }
+
+    // 5-12 DBupdate
+    // public function edit(Request $request) {
+    //     $param = ['id' => $request->id];
+    //     $item = DB::select('select * from people where id = :id', $param);
+    //     return view('hello.edit', ['form' => $item[0]]);
+    // }
+
+    // // 5-12 DBupdate
+    // public function update(Request $request) {
+    //     $param = [
+    //         'id' => $request->id,
+    //         'name' => $request->name,
+    //         'mail' => $request->mail,
+    //         'age' => $request->age,
+    //     ];
+    //     DB::update('update people set name =:name, mail =:mail, age =:age where id =:id', $param);
+    //     return redirect('/hello');
+    // }
 
     // 5-15 DBdelete
     public function del(Request $request) {
