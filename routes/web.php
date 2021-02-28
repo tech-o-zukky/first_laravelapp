@@ -28,3 +28,5 @@ Route::post('hello', 'App\Http\Controllers\HelloController@post');   // add3-16
 Route::get('derective', 'App\Http\Controllers\DerectiveStudyController@index');    //ディレクティブ学習ページ切り出し
 Route::get('hello/add', 'App\Http\Controllers\HelloController@add');   // add5-10
 Route::post('hello/add', 'App\Http\Controllers\HelloController@create');   // add5-10
+Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit');   // add5-13
+Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');   // add5-13
