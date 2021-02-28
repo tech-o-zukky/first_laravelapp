@@ -130,19 +130,32 @@ class HelloController extends Controller
     //     return redirect('/hello');
     // }
 
-    // 5-15 DBdelete
+    // 5-29 クエリビルダ(delete)
     public function del(Request $request) {
-        $param = ['id' => $request->id];
-        $item = DB::select('select * from people where id = :id', $param);
-        return view('hello.del', ['form' => $item[0]]);
+        $item = DB::table('people')
+            ->where('id', $request->id)->first();
+        return view('hello.del', ['form' => $item]);
+    }
+
+    public function remove(Request $request) {
+        DB::table('people')
+            ->where('id', $request->id)->delete();
+        return redirect('/hello');
     }
 
     // 5-15 DBdelete
-    public function remove(Request $request) {
-        $param = ['id' => $request->id];
-        DB::delete('delete from people where id =:id', $param);
-        return redirect('/hello');
-    }
+    // public function del(Request $request) {
+    //     $param = ['id' => $request->id];
+    //     $item = DB::select('select * from people where id = :id', $param);
+    //     return view('hello.del', ['form' => $item[0]]);
+    // }
+
+    // // 5-15 DBdelete
+    // public function remove(Request $request) {
+    //     $param = ['id' => $request->id];
+    //     DB::delete('delete from people where id =:id', $param);
+    //     return redirect('/hello');
+    // }
 
     // 5-19,5-22 クエリビルダ
     // public function show(Request $request) {
