@@ -30,3 +30,5 @@ Route::get('hello/add', 'App\Http\Controllers\HelloController@add');   // add5-1
 Route::post('hello/add', 'App\Http\Controllers\HelloController@create');   // add5-10
 Route::get('hello/edit', 'App\Http\Controllers\HelloController@edit');   // add5-13
 Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');   // add5-13
+Route::get('hello/del', 'App\Http\Controllers\HelloController@del');   // add5-16
+Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');   // add5-16
