@@ -29,11 +29,17 @@ function tag($tag, $txt) {
 class HelloController extends Controller
 {
     public function index(Request $request) {
+        // 5-7
+        if (isset($request->id)) {
+            $param = ['id' => $request -> id];
+            $items = DB::select('select * from people where id = :id', $param);
+        } else {
+            $items = DB::select('select * from people');
+        }
 
         // 5-4 start
-        $items = DB::select('select * from people');
+        // $items = DB::select('select * from people');
         return view('hello.index',['items' => $items]);
-
 
         // // delete
         // $data = ['one', 'two', 'three', 'four', 'five'];
