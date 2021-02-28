@@ -100,7 +100,7 @@ class HelloController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::update('update people set name =:name, mail =:mail, age =:age) where id =:id', $param);
+        DB::update('update people set name =:name, mail =:mail, age =:age where id =:id', $param);
         return redirect('/hello');
     }
 }
