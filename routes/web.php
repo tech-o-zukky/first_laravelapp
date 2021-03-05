@@ -33,3 +33,4 @@ Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');   // a
 Route::get('hello/del', 'App\Http\Controllers\HelloController@del');   // add5-16
 Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');   // add5-16
 Route::get('hello/show', 'App\Http\Controllers\HelloController@show');   // add5-20
+Route::get('person', 'App\Http\Controllers\PersonController@index');   // add6-4
