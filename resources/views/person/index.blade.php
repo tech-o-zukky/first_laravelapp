@@ -9,18 +9,29 @@
 
 @section('content')
   <table>
-    <tr>
-      <th>Name</th>
-      <th>Mail</th>
-      <th>Age</th>
-    </tr>
+    <tr><th>Data</th></tr>
     @foreach ($items as $item)
+      <tr>
+        <td>{{$item->getData()}}</td>
+      </tr>
+    @endforeach
+
+      {{-- 6-6
+      @foreach ($items as $item)
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Mail</th>
+          <th>Age</th>
+      </tr>
       <tr>
         <td>{{$item->name}}</td>
         <td>{{$item->mail}}</td>
         <td>{{$item->age}}</td>
       </tr>
-    @endforeach
+      @endforeach
+      --}}
+
   </table>
 @endsection
 
