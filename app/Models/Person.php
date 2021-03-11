@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use App\Scopes\ScopePerson; // 6-17
 
 class Person extends Model
 {
@@ -32,6 +33,14 @@ class Person extends Model
         return $query->where('age','<=', $n);
     }
 
+    // 6-17
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope(new ScopePerson);
+    }    
+
+    /*
     // 6-15
     protected static function boot()
     {
@@ -41,5 +50,6 @@ class Person extends Model
             $builder->where('age', '>', 50);
         });
     }
+    */
 
 }
