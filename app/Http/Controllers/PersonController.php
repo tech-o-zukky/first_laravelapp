@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Person;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\returnSelf;
+
 class PersonController extends Controller
 {
     public function index(Request $request) {
@@ -42,5 +44,21 @@ class PersonController extends Controller
         $param = ['input' => $request->input, 'item' => $item];
         return view('person.find', $param);
         */
+    }
+
+    public function add(Request $request)
+    {
+        return view('person.add');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request, Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        unset($form['_token']);
+        $person->fill($form)->save();
+
+        return view('/person');
     }
 }

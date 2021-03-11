@@ -36,3 +36,5 @@ Route::get('hello/show', 'App\Http\Controllers\HelloController@show');   // add5
 Route::get('person', 'App\Http\Controllers\PersonController@index');   // add6-4
 Route::get('person/find', 'App\Http\Controllers\PersonController@find');   // add6-9
 Route::post('person/find', 'App\Http\Controllers\PersonController@search');   // add6-9
+Route::get('person/add', 'App\Http\Controllers\PersonController@add');   // add6-21
+Route::post('person/add', 'App\Http\Controllers\PersonController@create');   // add6-21
