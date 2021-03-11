@@ -13,4 +13,10 @@ class Person extends Model
     {
         return $this->id . ': ' . $this->name . ' (' . $this->age . ')'; 
     }
+
+    // 6-11
+    public function scopeNameEqual($query, $str)
+    {
+        return $query->where('name', $str);
+    }
 }
