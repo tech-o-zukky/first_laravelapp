@@ -42,3 +42,7 @@ Route::get('person/edit', 'App\Http\Controllers\PersonController@edit');   // ad
 Route::post('person/edit', 'App\Http\Controllers\PersonController@update');   // add6-24
 Route::get('person/delete', 'App\Http\Controllers\PersonController@delete');   // add6-27
 Route::post('person/delete', 'App\Http\Controllers\PersonController@remove');   // add6-27
+// board
+Route::get('board', 'App\Http\Controllers\BoardController@index');   // add6-34
+Route::get('board/add', 'App\Http\Controllers\BoardController@add');   // add6-34
+Route::post('board/add', 'App\Http\Controllers\BoardController@create');   // add6-34
