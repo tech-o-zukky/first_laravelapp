@@ -9,12 +9,27 @@
 
 @section('content')
   <table>
+    <tr><th>Person</th><th>Board</th></tr>
+    @foreach ($items as $item)
+      <tr>
+        <td>{{$item->getData()}}</td>
+        <td>
+        @if ($item->board !=null)
+          {{$item->board->getData()}}
+        @endif
+        </td>
+      </tr>
+    @endforeach
+
+
+    {{-- 6-36に伴い削除
     <tr><th>Data</th></tr>
     @foreach ($items as $item)
       <tr>
         <td>{{$item->getData()}}</td>
       </tr>
     @endforeach
+    --}}
 
       {{-- 6-6
       @foreach ($items as $item)

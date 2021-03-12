@@ -61,4 +61,10 @@ class Person extends Model
     }
     */
 
+    // 6-35
+    public function board()
+    {
+        return $this->hasOne('App\Models\Board');
+    }
+
 }
