@@ -62,9 +62,15 @@ class Person extends Model
     */
 
     // 6-35
-    public function board()
+    // public function board()
+    // {
+    //     return $this->hasOne('App\Models\Board');
+    // }
+
+    // 6-37
+    public function boards()
     {
-        return $this->hasOne('App\Models\Board');
+        return $this->hasMany('App\Models\Board');
     }
 
 }
