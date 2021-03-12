@@ -59,6 +59,6 @@ class PersonController extends Controller
         unset($form['_token']);
         $person->fill($form)->save();
 
-        return view('/person');
+        return redirect('/person');
     }
 }
