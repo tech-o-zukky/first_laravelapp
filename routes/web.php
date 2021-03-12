@@ -40,3 +40,5 @@ Route::get('person/add', 'App\Http\Controllers\PersonController@add');   // add6
 Route::post('person/add', 'App\Http\Controllers\PersonController@create');   // add6-21
 Route::get('person/edit', 'App\Http\Controllers\PersonController@edit');   // add6-24
 Route::post('person/edit', 'App\Http\Controllers\PersonController@update');   // add6-24
+Route::get('person/delete', 'App\Http\Controllers\PersonController@delete');   // add6-27
+Route::post('person/delete', 'App\Http\Controllers\PersonController@remove');   // add6-27
