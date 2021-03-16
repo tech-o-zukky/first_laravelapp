@@ -33,3 +33,16 @@ Route::post('hello/edit', 'App\Http\Controllers\HelloController@update');   // a
 Route::get('hello/del', 'App\Http\Controllers\HelloController@del');   // add5-16
 Route::post('hello/del', 'App\Http\Controllers\HelloController@remove');   // add5-16
 Route::get('hello/show', 'App\Http\Controllers\HelloController@show');   // add5-20
+Route::get('person', 'App\Http\Controllers\PersonController@index');   // add6-4
+Route::get('person/find', 'App\Http\Controllers\PersonController@find');   // add6-9
+Route::post('person/find', 'App\Http\Controllers\PersonController@search');   // add6-9
+Route::get('person/add', 'App\Http\Controllers\PersonController@add');   // add6-21
+Route::post('person/add', 'App\Http\Controllers\PersonController@create');   // add6-21
+Route::get('person/edit', 'App\Http\Controllers\PersonController@edit');   // add6-24
+Route::post('person/edit', 'App\Http\Controllers\PersonController@update');   // add6-24
+Route::get('person/delete', 'App\Http\Controllers\PersonController@delete');   // add6-27
+Route::post('person/delete', 'App\Http\Controllers\PersonController@remove');   // add6-27
+// board
+Route::get('board', 'App\Http\Controllers\BoardController@index');   // add6-34
+Route::get('board/add', 'App\Http\Controllers\BoardController@add');   // add6-34
+Route::post('board/add', 'App\Http\Controllers\BoardController@create');   // add6-34
