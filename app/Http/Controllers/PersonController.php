@@ -10,8 +10,16 @@ use function PHPUnit\Framework\returnSelf;
 class PersonController extends Controller
 {
     public function index(Request $request) {
+        // 6-40
+        $hasItems = Person::has('boards')->get();
+        $noItems = Person::doesntHave('boards')->get();
+        $param = ['hasItems' =>$hasItems, 'noItems' => $noItems];
+        return view('person.index', $param);
+
+        /*
         $items = Person::all();
         return view('person.index', ['items' => $items]);
+        */
     }
 
     public function find(Request $request) {
